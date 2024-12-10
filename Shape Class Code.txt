@@ -1,0 +1,58 @@
+x = 1
+while x == 1:
+    continue_or_not = input("Do you want to continue❓(y/n): ").lower()
+    if continue_or_not == "y":
+        from math import *
+        try:
+            class Shape:
+                def area(self):
+                    raise NotImplementedError("Subclass must implement this method.")
+            shape = int(input("""Choose a shape: 
+1) Circle
+2) Rectangle
+3) Square
+4) Triangle
+Choose from 1-4:
+>>> """))
+            measurement = input("Enter the measurement you want?(cm or m): ").lower()
+            class Circle:
+                def area(self):
+                    radius = int(input(f"Enter the radius of the circle🔵({measurement}): "))
+                    area_of_circle = pi * radius**2
+                    print(f"The area of the circle having radius {radius}{measurement} is {area_of_circle}{measurement}.")
+            class Rectangle:
+                def area(self):
+                    length = int(input("Enter the length of the rectangle: "))
+                    breadth = int(input("Enter the breadth of the rectangle: "))
+                    area_of_rectangle = length * breadth
+                    print(f"The area of the rectangle having a length of {length}{measurement} and {breadth}{measurement} is {area_of_rectangle}{measurement}.")
+            class Square:
+                def area(self):
+                    length = int(input("Enter the length of the square: "))
+                    area_of_square = length * length
+                    print(f"The area of the square having a length of {length}{measurement} is {area_of_square}{measurement}.")
+            class Triangle:
+                def area(self):
+                    base = int(input("Enter the breadth of the triangle: "))
+                    height = int(input("Enter the height of the triangle: "))
+                    area_of_triangle = height * base * 1/2
+                    print(f"The area of the triangle having a base of {base}{measurement} and height of {height}{measurement} is {area_of_triangle}{measurement}.")
+            if shape == 1:
+                Shape = Circle()
+                Shape.area()
+            elif shape == 2:
+                Shape = Rectangle()
+                Shape.area()
+            elif shape == 3:
+                Shape = Square()
+                Shape.area()
+            elif shape == 4:
+                Shape = Triangle()
+                Shape.area()
+            else:
+                print("Sorry, there is no such option given❌")
+        except ValueError:
+            print("You have to enter a number from 1-4.☹")
+    else:
+        print("Okay, Bye Bye😊!")
+        quit()
