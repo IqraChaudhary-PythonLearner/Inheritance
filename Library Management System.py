@@ -1,3 +1,4 @@
+print("Library Management System")
 class Library:
     def __init__(self):
         self.registered_users = ["Iqra", "Asmaa", "Amina"]
